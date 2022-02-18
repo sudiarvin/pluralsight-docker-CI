@@ -1,12 +1,13 @@
-FROM centos:centos6
+FROM almalinux:latest
 
-MAINTAINER nigelpoulton@hotmail.com
+MAINTAINER sudi.arvin@gmail.com
 
 # Enable EPEL for Node.js
-RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-
+#oRUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+#RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#RUN dnf install -y epel-release
 # Install Node...
-RUN yum install -y npm
+RUN dnf install -y npm
 
 # Copy app to /src
 COPY . /src
